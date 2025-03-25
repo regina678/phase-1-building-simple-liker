@@ -3,9 +3,22 @@ const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
+const modal = document.getElementById("modal");
+    const likeButton = document.querySelector(".like-button");
 
+    // Ensure modal starts hidden
+    modal.classList.add("hidden");
 
-
+    // Toggle like button
+    likeButton.addEventListener("click", () => {
+        if (likeButton.textContent === EMPTY_HEART) {
+            likeButton.textContent = FULL_HEART;
+            likeButton.classList.add("liked");
+        } else {
+            likeButton.textContent = EMPTY_HEART;
+            likeButton.classList.remove("liked");
+        }
+    });
 
 //------------------------------------------------------------------------------
 // Don't change the code below: this function mocks the server response
